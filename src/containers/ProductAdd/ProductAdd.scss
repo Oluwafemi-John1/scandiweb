@@ -1,0 +1,108 @@
+.pro__navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  li {
+    margin: 0 1rem;
+    cursor: pointer;
+    flex-direction: column;
+    &:nth-child(2) button {
+      background: var(--brown-color);
+      &:hover {
+        border: 1px solid var(--brown-color);
+        background: none;
+        color: var(--brown-color);
+      }
+    }
+    &:nth-child(1) button {
+      background: var(--secondary-color);
+      &:hover {
+        border: 1px solid var(--secondary-color);
+        background: none;
+        color: var(--secondary-color);
+      }
+    }
+  }
+}
+button {
+  color: var(--gray-color);
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 18px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.pro__form-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  padding: 6rem 2rem 0;
+  @media screen and (min-width: 2000px) {
+    padding-top: 8rem;
+  }
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 6rem 1rem 2rem;
+  }
+  .pro__form {
+    position: relative;
+    width: 430px;
+    padding: 40px 40px 60px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.1);
+    .pro__form-group {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      label {
+        color: #868686;
+        margin-right: 10px;
+        font-size: 18px;
+        white-space: nowrap;
+      }
+      input,select {
+        height: 40px;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        padding: 5px 15px;
+        font-size: 18px;
+        &:invalid {
+          border: 1px solid red;
+        }
+        
+        &:valid {
+          border: 1px solid green;
+        }
+      }
+      span{
+        color: red;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(18px);
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.is-invalid{
+  border: 1px solid red !important;
+}
+.text-danger{
+  color:red;
+}
