@@ -10,7 +10,7 @@ const ProductList = () => {
   const [selectedProductIndexes, setSelectedProductIndexes] = useState([]);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const url = "https://scandiwebackend.000webhostapp.com/Backend"; 
+  const url = "https://scandiweb.herokuapp.com/"; 
   // const url ='http://localhost/php/scandiweb/Backend' 
   useEffect(() => {
     axios.get(`${url}/getAllProducts.php`)

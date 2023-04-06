@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useFormik } from "formik";
 import "./ProductAdd.scss";
-import { useNavigate } from "react-router-dom"; 
-import axios from 'axios' 
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const ProductAdd = () => {
   const bookBx = useRef();
   const [selected, setSelected] = useState(null);
@@ -22,8 +22,7 @@ const ProductAdd = () => {
       }
     });
   }
-// const url ='https://scandiwebackend.000webhostapp.com/Backend'
-  // const url ='http://localhost/php/scandiweb/Backend'
+  const url ='https://scandiweb.herokuapp.com/createProduct.php';
   const formik = useFormik({
     initialValues: {
       sku: "",
@@ -37,9 +36,10 @@ const ProductAdd = () => {
       height: "",
     },
     onSubmit: (values) => {
-      axios.post(`https://scandiwebackend.000webhostapp.com/Backend/createProduct.php`, values)
+      console.log(values)
+      axios.post(url, values)
         .then((data) => {
-          if (data.data.success === true) {  
+          if (data.data.success === true) {
             navigate("/");
           }
         })
@@ -121,7 +121,9 @@ const ProductAdd = () => {
               <button type="submit">Save</button>
             </li>
             <li className="app__flex p-text">
-              <button onClick={()=>navigate('/')} type="button">Cancel</button>
+              <button onClick={() => navigate("/")} type="button">
+                Cancel
+              </button>
             </li>
           </ul>
         </nav>

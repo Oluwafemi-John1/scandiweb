@@ -1,0 +1,27 @@
+.app {
+  background-color: var(--white-color);
+  font-family: var(--font-base);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+}
+@media screen and (min-width: 2000px) {
+  .p-text {
+    font-size: 1.75rem;
+  }
+}/*# sourceMappingURL=App.css.map */
