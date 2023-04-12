@@ -32,6 +32,7 @@ const ProductList = () => {
       axios.post(`${url}/deleteProduct.php`, { sku: selectedProductIndexes }
     )
         .then((response) => {
+        console.log(response.data)
           if (response.ok) {
             setSelectedProductIndexes([]);
             setProducts((prevState) =>
@@ -39,7 +40,7 @@ const ProductList = () => {
                 (product) => !selectedProductIndexes.includes(product.sku)
               )
             );
-            window.location.reload();
+           
           } else {
             throw new Error("Network response was not ok");
           }
