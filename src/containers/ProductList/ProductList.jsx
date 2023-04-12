@@ -39,6 +39,7 @@ const ProductList = () => {
                 (product) => !selectedProductIndexes.includes(product.sku)
               )
             );
+            window.location.reload();
           } else {
             throw new Error("Network response was not ok");
           }
