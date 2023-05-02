@@ -10,10 +10,9 @@ const ProductList = () => {
   const [selectedProductIndexes, setSelectedProductIndexes] = useState([]);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const url = "https://scandback.herokuapp.com"; 
-  // const url ='http://localhost/php/scandiweb/Backend' 
+  const url = "https://scandback.herokuapp.com/index.php"; 
   useEffect(() => {
-    axios.get(`${url}`)
+    axios.get(`${url}/getProduct`)
       .then((data) => setProducts(data.data.result))
       .catch((err) => console.log(err));
   }, []);
@@ -29,7 +28,7 @@ const ProductList = () => {
   };
   const deleteSelectedProducts = () => {
     if (selectedProductIndexes.length > 0) {
-      axios.post(`${url}/deleteProduct.php`, { sku: selectedProductIndexes }
+      axios.post(`${url}/deleteProduct`, { sku: selectedProductIndexes }
     )
         .then((response) => {
           if (response.data.success === true) {
