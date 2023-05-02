@@ -22,7 +22,7 @@ const ProductAdd = () => {
       }
     });
   }
-  const url ='https://scandback.herokuapp.com/createProduct.php';
+  const url ='https://scandback.herokuapp.com/index.php/createProduct';
   const formik = useFormik({
     initialValues: {
       sku: "",
