@@ -32,12 +32,13 @@ const ProductList = () => {
     )
         .then((response) => {
           if (response.data.success === true) {
-            setSelectedProductIndexes([]);
-            setProducts((prevState) =>
-              prevState.filter(
-                (product) => !selectedProductIndexes.includes(product.sku)
-              )
-            );
+//             setSelectedProductIndexes([]);
+//             setProducts((prevState) =>
+//               prevState.filter(
+//                 (product) => !selectedProductIndexes.includes(product.sku)
+//               )
+//             );
+            console.log(response.data);
           }
         else {
             throw new Error("Network response was not ok");
