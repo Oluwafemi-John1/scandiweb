@@ -36,7 +36,6 @@ const ProductAdd = () => {
       height: "",
     },
     onSubmit: (values) => {
-      console.log(values)
       axios.post(url, values)
         .then((data) => {
           if (data.data.success === true) {
