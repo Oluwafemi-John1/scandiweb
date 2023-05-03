@@ -31,14 +31,13 @@ const ProductList = () => {
       axios.post(`${url}/deleteProduct`, { sku: selectedProductIndexes }
     )
         .then((response) => {
-          if (response) {
-//             setSelectedProductIndexes([]);
-//             setProducts((prevState) =>
-//               prevState.filter(
-//                 (product) => !selectedProductIndexes.includes(product.sku)
-//               )
-//             );
-            console.log(response.data);
+          if (response.data) {
+            setSelectedProductIndexes([]);
+            setProducts((prevState) =>
+              prevState.filter(
+                (product) => !selectedProductIndexes.includes(product.sku)
+              )
+            );
           }
         else {
             throw new Error("Network response was not ok");
