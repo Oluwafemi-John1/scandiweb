@@ -31,7 +31,7 @@ const ProductList = () => {
       axios.post(`${url}/deleteProduct`, { sku: selectedProductIndexes }
     )
         .then((response) => {
-          if (response.data.success === true) {
+          if (response) {
 //             setSelectedProductIndexes([]);
 //             setProducts((prevState) =>
 //               prevState.filter(
